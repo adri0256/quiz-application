@@ -1,25 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Layout from './components/layout/Layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { InfinitySpin } from 'react-loader-spinner';
+
+const LazyHome = React.lazy(() => import('./pages/Home'));
+const LazyRoom = React.lazy(() => import('./pages/Room'));
+
+function requireAuth(nextState, replace, next) {
+  if (!localStorage.getItem('token')) {
+    replace({
+      pathname: "/",
+      state: {nextPathname: nextState.location.pathname}
+    });
+  }
+  next();
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/Home' element={
+            <React.Suspense fallback={
+              <div className="loading">
+                <InfinitySpin width='200' color="#233642"/>
+              </div>}>
+              <LazyHome />
+            </React.Suspense>
+          }></Route>
+          <Route path='Room' element={
+            <React.Suspense fallback={
+              <div className="loading">
+                <InfinitySpin width='200' color="#233642"/>
+              </div>}>
+              <LazyRoom />
+            </React.Suspense>
+          }></Route>
+        </Routes>
+      </BrowserRouter>
+    </Layout>
   );
 }
 
