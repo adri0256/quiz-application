@@ -8,16 +8,6 @@ import { InfinitySpin } from 'react-loader-spinner';
 const LazyHome = React.lazy(() => import('./pages/Home'));
 const LazyRoom = React.lazy(() => import('./pages/Room'));
 
-function requireAuth(nextState, replace, next) {
-  if (!localStorage.getItem('token')) {
-    replace({
-      pathname: "/",
-      state: {nextPathname: nextState.location.pathname}
-    });
-  }
-  next();
-}
-
 function App() {
   return (
     <Layout>
