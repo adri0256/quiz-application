@@ -5,28 +5,37 @@ import Layout from './components/layout/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { InfinitySpin } from 'react-loader-spinner';
 
-const LazyHome = React.lazy(() => import('./pages/Home'));
-const LazyRoom = React.lazy(() => import('./pages/Room'));
+const LazyLoginPage = React.lazy(() => import('./pages/Login'));
+const LazyHomePage = React.lazy(() => import('./pages/Home'));
+const LazyRoomPage = React.lazy(() => import('./pages/Room'));
 
 function App() {
   return (
     <Layout>
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={
+            <React.Suspense fallback={
+              <div className="loading">
+                <InfinitySpin width='200' color="#233642"/>
+              </div>}>
+              <LazyLoginPage />
+            </React.Suspense>
+          }></Route>
           <Route path='/Home' element={
             <React.Suspense fallback={
               <div className="loading">
                 <InfinitySpin width='200' color="#233642"/>
               </div>}>
-              <LazyHome />
+              <LazyHomePage />
             </React.Suspense>
           }></Route>
-          <Route path='Room' element={
+          <Route path='/Room' element={
             <React.Suspense fallback={
               <div className="loading">
                 <InfinitySpin width='200' color="#233642"/>
               </div>}>
-              <LazyRoom />
+              <LazyRoomPage />
             </React.Suspense>
           }></Route>
         </Routes>

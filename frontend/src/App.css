@@ -36,9 +36,8 @@
   padding-right: 50px;
   align-items: center;
   justify-content: space-between;
-  background-color: aqua;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 } 
 
 .navCustom > div > a {
@@ -53,6 +52,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  gap: 10px;
 }
 
 .loginRegForm {
@@ -167,4 +167,47 @@
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   max-width: 650px;
+}
+
+/* Card */
+.card-custom {
+  width: 75vw;
+  height: 50vh;
+  border-radius: 16px;
+  background-color: rgba(13, 96, 138, 0.2);
+  box-shadow: rgb(0 0 0 / 10%) 10px 10px 10px;
+  border-color: rgba(48, 52, 54, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-custom > div > h5 {
+  cursor: pointer;
+}
+
+.card-custom > div > h5:hover {
+  cursor: pointer;
+  color: #0d608a;
+}
+
+.card-body-custom {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 75vw;
+}
+
+.card-body-button-group{
+  display: flex;
+  height: 100%;
+  width: 10vw;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.card-body-button-group > button {
+  width: 5vw;
+  max-width: 50px;
 }
