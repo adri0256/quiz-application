@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { UserModel } from '../model/UserModel';
-import { MDBTabs, MDBTabsItem,  MDBTabsLink, MDBTabsContent, MDBTabsPane } from 'mdb-react-ui-kit';
+import { MDBTabs, MDBTabsItem,  MDBTabsLink, MDBTabsContent, MDBTabsPane, MDBInput, MDBRow, MDBCol, MDBCheckbox, MDBBtn } from 'mdb-react-ui-kit';
 import { Navigate, useNavigate } from 'react-router-dom';
+import './Login.css';
 
-function LoginPage() {
+export default function LoginPage() {
     const [basicActive, setBasicActive] = useState('tab1');
     const [userModel] = useState(new UserModel("", ""));
 
@@ -63,37 +64,41 @@ function LoginPage() {
 
                 <MDBTabsContent>
                     <MDBTabsPane show={basicActive === 'tab1'}>{
-                        <form className="loginRegForm" onSubmit={handleLogin}>
-                            <label htmlFor="loginUName">Username</label>
-                            <input type="text" className="form-control" name="uName" id="loginUName" placeholder="Username" />
-                
-                            <label htmlFor="loginPwd">Password</label>
-                            <input type="password" className="form-control" name="uPwd" id="loginPwd" placeholder="Password" />
-                
-                            <input type="checkbox" className="form-check-input" id="loginRememberMe" />
-                            <label className="form-check-label" htmlFor="loginRememberMe">Remember Me</label>
-                
-                            <button type="submit" className="btn btn-primary grid-five">Login</button>
+                        <form onSubmit={handleLogin} className="loginRegForm">
+                            <MDBInput type='text' id='uName' name="uName" label='Username' />
+                            <MDBInput type='password' id='uPwd' name="uPwd" label='Password' />
+
+                            <MDBRow>
+                                <MDBCol className='d-flex justify-content-center'>
+                                <MDBCheckbox id='form2Example3' label='Remember me' defaultChecked />
+                                </MDBCol>
+                                <MDBCol>
+                                <a href='#!'>Forgot password?</a>
+                                </MDBCol>
+                            </MDBRow>
+
+                            <MDBBtn type='submit' className='mb-4' block>
+                                Sign in
+                            </MDBBtn>
                         </form>
                     }</MDBTabsPane>
                     <MDBTabsPane show={basicActive === 'tab2'}>{
                         <form className="loginRegForm">
-                            <label htmlFor="regUName">Username</label>
-                            <input type="text" className="form-control" id="regUName" placeholder="Username" />
+                            <MDBInput id='form8Example1' label='Name' />
+                            <MDBInput id='form8Example2' label='Username' />
+                            <MDBInput type='email' id='form8Example3' label='Email address' />
+                            <MDBInput type='password' id='form8Example4' label='Password' />
+                            <MDBInput type='password' id='form8Example5' label='Repeat password' />
                 
-                            <label htmlFor="regPwd">Password</label>
-                            <input type="password" className="form-control" id="regPwd" placeholder="Password" />
+                            <MDBCheckbox
+                            wrapperClass='d-flex justify-content-center'
+                            id='form8Example6'
+                            label='I have read and agree to the terms'
+                            />
                 
-                            <label htmlFor="regPwdRe">Password Re</label>
-                            <input type="password" className="form-control" id="regPwdRe" placeholder="Password" />
-                
-                            <label htmlFor="regEmail">Email</label>
-                            <input type="email" className="form-control" id="regEmail" placeholder="Email" />
-                
-                            <label htmlFor="dName">Display Name</label>
-                            <input type="text" className="form-control" id="dName" placeholder="Display Name" />
-                            
-                            <button type="submit" className="btn btn-primary">Register</button>
+                            <MDBBtn type='submit' block>
+                            Sign in
+                            </MDBBtn>
                         </form>
                     }</MDBTabsPane>
                 </MDBTabsContent>
@@ -101,5 +106,3 @@ function LoginPage() {
         </div>
     );
 }
-
-export default LoginPage;

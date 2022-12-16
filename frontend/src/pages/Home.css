@@ -1,0 +1,36 @@
+/* Card */
+.card-custom {
+    width: 55vw;
+    background-color: rgba(13, 96, 138, 0.2);
+    box-shadow: rgb(0 0 0 / 10%) 10px 10px 10px;
+    border-color: rgba(48, 52, 54, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .card-custom > div > h5 {
+    cursor: pointer;
+    width: fit-content;
+  }
+  
+  .card-custom > div > h5:hover {
+    cursor: pointer;
+    color: #0d608a;
+  }
+  
+  .card-body-custom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  .card-body-button-group{
+    display: flex;
+    height: 100%;
+    gap: 10px;
+  }
+  
+  .card-body-button-group > button {
+    width: 40px;
+  }

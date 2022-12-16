@@ -1,0 +1,97 @@
+.tab-content {
+    padding-top: 3vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .loginRegForm {
+    display: grid;
+    grid-gap: 10px;
+    gap: .8rem;
+    width: 100%;
+    justify-items: flex-start;
+    align-items: center;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+  }
+  
+  .loginRegForm > div > input {
+    justify-self: center;
+    background-color: white !important;
+  }
+  
+  .loginRegForm > div > input {
+    justify-self: center;
+    background-color: white !important;
+  }
+  
+  .form-control {
+    width: 100%;
+    grid-column: controls;
+    grid-row: auto;
+    max-width: 400px;
+  }
+  
+  .form-outline {
+    width: 100%;
+  }
+  
+  .loginRegForm > button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  /* Multibox */
+  .multibox-custom {
+    width: 50vw;
+    height: 50vh;
+  }
+  
+  .multibox-custom > div {
+    height: calc(100% - 49px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 3%;
+  }
+
+  .custom-nav-link {
+    border-bottom: 1px solid #e0e0e0 !important;
+  }
+  
+  .custom-nav-link > li {
+    flex: 1;
+  }
+  
+  .custom-nav-link > li > a {
+    font-size: 1.2rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--mdb-font-sans-serif);
+  }
+  
+  .custom-nav-link > li:first-child > a {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 0px;
+  }
+  
+  .custom-nav-link > li:nth-child(2) > a {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 16px;
+  }
+  
+  .form-check-input::after{
+    display: none !important;
+  }
+  
+  .form-check-input::before{
+    display: none !important;
+  }
+  

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/layout/Layout';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { InfinitySpin } from 'react-loader-spinner';
 
 const LazyLoginPage = React.lazy(() => import('./pages/Login'));

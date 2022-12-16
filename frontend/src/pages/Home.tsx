@@ -1,17 +1,17 @@
 import React from 'react';
+import './Home.css';
 import { Navigate, useNavigate } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MDBCard, MDBCardBody, MDBCardText, MDBCardTitle } from 'mdb-react-ui-kit';
 
-function HomePage() {
+export default function HomePage() {
     const navigate = useNavigate();
 
     const cardInfo = [
-        {title: 'Card 1', text: 'Some quick example text'},
-        {title: 'Card 2', text: 'Some quick example text'},
-        {title: 'Card 3', text: 'Some quick example text'},
-        {title: 'Card 4', text: 'Some quick example text'},
-        {title: 'Card 5', text: 'Some quick example text'}
+        {title: 'Programozás', text: 'Some quick example text'},
+        {title: 'Programozás Gyakorlat', text: 'Some quick example text'},
+        {title: 'Projektmunka II.', text: 'Some quick example text'},
+        {title: 'Webprogramozás', text: 'Some quick example text'}
     ]
     
     const handleLogout = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -39,10 +39,6 @@ function HomePage() {
                     <MDBCardText>
                         {card.text}
                     </MDBCardText>
-                    <div className="card-body-button-group">
-                        <button className="btn btn-primary">A</button>
-                        <button className="btn btn-primary">B</button>
-                    </div>
                 </div>
             </MDBCardBody>
         </MDBCard>
@@ -58,5 +54,3 @@ function HomePage() {
             </div>
         );
 }
-
-export default HomePage;
